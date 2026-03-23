@@ -74,7 +74,13 @@
   }
 }
 
-.ctaMobile { margin-top: 1.5rem; @include desktop { display: none; } }
+.ctaMobile {
+  display: none;
+  @include tablet {
+    display: block;
+    margin-top: 1.5rem;
+  }
+}
 .ctaDesk   { @include tablet { display: none; } }
 
 .btnCta {
