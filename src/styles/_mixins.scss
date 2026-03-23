@@ -1,0 +1,109 @@
+@use 'variables' as *;
+
+@mixin mobile  { @media (max-width: 480px)  { @content; } }
+@mixin tablet  { @media (max-width: 768px)  { @content; } }
+@mixin desktop { @media (min-width: 1024px) { @content; } }
+
+@mixin wrap {
+  width: 100%;
+  max-width: $container;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 2.5rem);
+}
+
+@mixin section {
+  padding-block: $section-py;
+  position: relative;
+  overflow: hidden;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin card-base {
+  background: $bg-card;
+  border: 1px solid $border-card;
+  border-radius: $r-lg;
+  padding: 1.5rem;
+  transition: border-color $t-base $ease, box-shadow $t-base $ease,
+              transform $t-base $ease, background $t-base;
+  &:hover {
+    border-color: $border-turq;
+    box-shadow: 0 4px 24px rgba(0,151,178,0.1);
+    transform: translateY(-2px);
+    background: $bg-elevated;
+  }
+}
+
+@mixin section-label {
+  font-family: $font-mono;
+  font-size: $fs-micro;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: $turquesa;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+@mixin btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.75rem;
+  background: $turquesa;
+  color: $blanco;
+  font-family: $font-body;
+  font-size: $fs-sm;
+  font-weight: 500;
+  border-radius: $r-pill;
+  border: none;
+  cursor: pointer;
+  transition: background $t-fast, box-shadow $t-fast, transform $t-fast;
+  &:hover {
+    background: #00aecf;
+    box-shadow: $turquesa-glow;
+    transform: translateY(-1px);
+  }
+}
+
+@mixin btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.75rem;
+  background: transparent;
+  color: $blanco;
+  font-family: $font-body;
+  font-size: $fs-sm;
+  font-weight: 400;
+  border-radius: $r-pill;
+  border: 1px solid rgba(255,255,255,0.25);
+  cursor: pointer;
+  transition: border-color $t-fast, color $t-fast;
+  &:hover {
+    border-color: rgba(255,255,255,0.55);
+    color: $blanco;
+  }
+}
+
+@mixin icon-box($size: 40px) {
+  width: $size;
+  height: $size;
+  border-radius: $r-sm;
+  background: $turquesa-15;
+  @include flex-center;
+  flex-shrink: 0;
+  color: $turquesa;
+  svg { width: $size * 0.5; height: $size * 0.5; }
+}

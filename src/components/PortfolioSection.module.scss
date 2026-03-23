@@ -1,0 +1,106 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.section { @include section; background: $bg-base; }
+.inner   { @include wrap; }
+
+.header {
+  @include flex-between;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.headerLeft { flex: 1; }
+.label { @include section-label; }
+.h2 { font-family:$font-display;font-size:$fs-h2;font-weight:700;color:$blanco;letter-spacing:.02em;margin-bottom:.6rem; }
+.subtitle { font-size:$fs-body;color:$text-muted;line-height:1.65; }
+.casosLabel { font-family:$font-mono;font-size:$fs-xs;color:$text-dim;letter-spacing:.1em;white-space:nowrap; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  @include tablet { grid-template-columns: 1fr; }
+}
+
+.card {
+  border: 1px solid $border-card;
+  border-radius: $r-lg;
+  overflow: hidden;
+  background: $bg-card;
+  transition: border-color $t-base, box-shadow $t-base;
+  &:hover { border-color: $border-turq; box-shadow: 0 4px 30px rgba(0,151,178,0.1); }
+}
+
+.cardVisual {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  background: #040e18;
+  @include flex-center;
+}
+
+// DICOM
+.dicomVisual { width:100%;height:100%;@include flex-center;padding:.5rem; }
+.dicomSvg    { width:100%;height:100%;object-fit:contain; }
+
+// Telemetry
+.telemVisual { width:100%;height:100%;display:flex;flex-direction:column;background:#080c14; }
+.telemBar {
+  @include flex-between;
+  padding:.4rem .75rem;
+  background:rgba(0,151,178,0.08);
+  border-bottom:1px solid rgba(0,151,178,0.15);
+  flex-shrink:0;
+}
+.telemBarLeft { display:flex;align-items:center;gap:.75rem; }
+.telemF1 { font-family:$font-mono;font-size:.6rem;letter-spacing:.12em;color:$turquesa;font-weight:600; }
+.telemLive { display:flex;align-items:center;gap:.3rem;font-family:$font-mono;font-size:.55rem;letter-spacing:.1em;color:rgba(255,255,255,.4); }
+.liveDot { width:5px;height:5px;border-radius:50%;background:#22c55e;animation:blink 1.2s infinite;display:inline-block; }
+.telemControls { display:flex;gap:.3rem; }
+.tCtrl,.tCtrlRed { width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.15);@include flex-center;font-size:.5rem;color:rgba(255,255,255,.5); }
+.tCtrlRed { background:#ff5f57;color:white; }
+
+.telemBody { flex:1;display:flex;gap:.5rem;padding:.6rem;overflow:hidden; }
+.speedoWrap { display:flex;flex-direction:column;align-items:center;gap:.25rem;flex-shrink:0; }
+.speedo { width:110px;height:110px; }
+.speedoLabel { display:flex;flex-direction:column;align-items:center;gap:0; }
+.speedoVal { font-family:$font-display;font-size:1rem;font-weight:700;color:$turquesa; }
+.speedoUnit { font-family:$font-mono;font-size:.55rem;color:$text-dim; }
+
+.charts { flex:1;display:flex;flex-direction:column;gap:.5rem;overflow:hidden; }
+.chartRow { display:flex;gap:.5rem;flex:1;overflow:hidden; }
+.chartTitle { @include flex-between;font-family:$font-mono;font-size:.58rem;color:rgba(255,255,255,.5);margin-bottom:.3rem; }
+.chartVal { color:$turquesa; }
+
+.barChart { flex:1;display:flex;flex-direction:column;overflow:hidden; }
+.bars { flex:1;display:flex;align-items:flex-end;gap:1.5px;overflow:hidden; }
+.bar { flex:1;border-radius:1px 1px 0 0;min-height:4px;animation:barAnim 2s ease-in-out infinite alternate; }
+
+.lineChart { flex:1;display:flex;flex-direction:column;overflow:hidden; }
+.lineSvg   { flex:1;width:100%; }
+
+.metricsRow { display:flex;gap:.4rem; }
+.metric { flex:1;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:.3rem .4rem;display:flex;flex-direction:column;align-items:center; }
+.metricLbl { font-family:$font-mono;font-size:.5rem;letter-spacing:.1em;color:$text-dim;text-transform:uppercase; }
+.metricVal { font-family:$font-display;font-size:.85rem;font-weight:700;color:$blanco; }
+
+.cardInfo { padding:1.5rem; }
+.cardTitle { font-family:$font-display;font-size:1.35rem;font-weight:700;color:$blanco;letter-spacing:.02em;margin-bottom:.5rem; }
+.cardDesc  { font-size:$fs-sm;color:$text-muted;line-height:1.65;margin-bottom:1rem; }
+.tags      { display:flex;flex-wrap:wrap;gap:.4rem; }
+
+.cta {
+  text-align:center;
+  margin-top:2.5rem;
+  font-size:$fs-sm;
+  color:$text-muted;
+}
+.ctaLink {
+  color:$turquesa;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  transition:opacity $t-fast;
+  &:hover { opacity:.8; }
+}

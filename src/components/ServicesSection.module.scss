@@ -1,0 +1,130 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.section {
+  @include section;
+  background: $bg-section;
+}
+
+.inner { @include wrap; }
+
+.header { margin-bottom: 3.5rem; }
+
+.label { @include section-label; }
+
+.h2 {
+  font-family: $font-display;
+  font-size: $fs-h2;
+  font-weight: 700;
+  color: $blanco;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.subtitle {
+  font-size: $fs-body;
+  color: $text-muted;
+  line-height: 1.65;
+  max-width: 400px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  @include mobile { grid-template-columns: 1fr; }
+}
+
+.card {
+  @include card-base;
+}
+
+.cardTop {
+  @include flex-between;
+  margin-bottom: 1.1rem;
+}
+
+.iconBox {
+  @include icon-box(40px);
+}
+
+.num {
+  font-family: $font-display;
+  font-size: 2rem;
+  font-weight: 700;
+  color: $text-ultra;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.cardTitle {
+  font-family: $font-display;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: $blanco;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.cardDesc {
+  font-size: $fs-sm;
+  color: $text-muted;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    font-size: $fs-sm;
+    color: $text-muted;
+    line-height: 1.5;
+  }
+}
+
+.dot {
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: $turquesa;
+  margin-top: 0.45em;
+}
+
+.badgeRow {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  @include mobile { flex-direction: column; }
+}
+
+.badgePill {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.25rem;
+  background: $bg-card;
+  border: 1px solid $border-card;
+  border-radius: $r-lg;
+  font-size: $fs-sm;
+  color: $text-muted;
+  transition: border-color $t-fast;
+  &:hover { border-color: $border-turq; color: $blanco; }
+}
+
+.pillDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $turquesa;
+  flex-shrink: 0;
+}

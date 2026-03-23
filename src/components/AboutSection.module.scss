@@ -1,0 +1,73 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.section {
+  @include section;
+  background: $bg-section;
+}
+.inner {
+  @include wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  @include tablet { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+.left { display:flex;flex-direction:column;gap:1rem; }
+.label { @include section-label; margin-bottom:0; }
+.h2 { font-family:$font-display;font-size:$fs-h2;font-weight:700;color:$blanco;letter-spacing:.02em;line-height:1.1;margin-bottom:.25rem; }
+.accent { color:$turquesa; }
+.body { font-size:$fs-body;color:$text-muted;line-height:1.7; }
+
+.quote {
+  border-left: 3px solid $turquesa;
+  padding-left: 1rem;
+  font-family: $font-display;
+  font-style: italic;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: $turquesa;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+.logoWrap img.logo { height:44px;width:auto;opacity:.65;transition:opacity $t-fast;&:hover{opacity:1;} }
+
+.right { display:flex;flex-direction:column;gap:1rem;padding-top:.5rem; }
+
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  @include mobile { grid-template-columns: 1fr; }
+}
+
+.pillar {
+  @include card-base;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pillarIcon {
+  @include icon-box(36px);
+}
+
+.pillarTitle { font-family:$font-display;font-size:1rem;font-weight:700;color:$blanco;letter-spacing:.02em; }
+.pillarDesc  { font-size:$fs-sm;color:$text-muted;line-height:1.6; }
+
+.missionBox {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid $border-card;
+  border-radius: $r-md;
+  text-align: center;
+
+  p {
+    font-size: $fs-sm;
+    color: $text-muted;
+    line-height: 1.7;
+    strong { color: $blanco; font-weight: 600; }
+  }
+}

@@ -1,0 +1,62 @@
+// === BRAND COLORS ===
+$turquesa:     #0097b2;
+$azul-cobalto: #004aad;
+$negro:        #000000;
+$blanco:       #ffffff;
+
+// === BACKGROUNDS ===
+$bg-base:      #0a0f1a;
+$bg-section:   #0d1422;
+$bg-card:      #111827;
+$bg-elevated:  #152035;
+$bg-footer:    #070c14;
+
+// === TURQUESA VARIANTS ===
+$turquesa-15:  rgba(0, 151, 178, 0.15);
+$turquesa-12:  rgba(0, 151, 178, 0.12);
+$turquesa-08:  rgba(0, 151, 178, 0.08);
+$turquesa-40:  rgba(0, 151, 178, 0.40);
+$turquesa-glow: 0 0 20px rgba(0, 151, 178, 0.35);
+
+// === COBALTO VARIANTS ===
+$cobalto-15:   rgba(0, 74, 173, 0.15);
+
+// === TEXT ===
+$text-muted:   rgba(255,255,255,0.55);
+$text-dim:     rgba(255,255,255,0.30);
+$text-ultra:   rgba(255,255,255,0.12);
+
+// === BORDERS ===
+$border-subtle: rgba(255,255,255,0.07);
+$border-card:   rgba(255,255,255,0.09);
+$border-turq:   rgba(0, 151, 178, 0.35);
+
+// === TYPOGRAPHY ===
+$font-display: 'Rajdhani', sans-serif;
+$font-body:    'DM Sans', sans-serif;
+$font-mono:    'Share Tech Mono', monospace;
+
+// === SCALE ===
+$fs-hero:   clamp(3rem, 7vw, 5.5rem);
+$fs-h2:     clamp(1.9rem, 3.5vw, 3rem);
+$fs-h3:     clamp(1rem, 1.8vw, 1.25rem);
+$fs-body:   0.95rem;
+$fs-sm:     0.85rem;
+$fs-xs:     0.75rem;
+$fs-micro:  0.68rem;
+
+// === SPACING ===
+$section-py:  clamp(5rem, 9vw, 8rem);
+$container:   1200px;
+
+// === MOTION ===
+$ease:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$t-fast:  180ms;
+$t-base:  320ms;
+$t-slow:  500ms;
+
+// === RADIUS ===
+$r-sm:   6px;
+$r-md:   10px;
+$r-lg:   14px;
+$r-pill: 999px;
