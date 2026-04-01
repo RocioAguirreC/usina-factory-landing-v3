@@ -5,8 +5,8 @@ $negro:        #000000;
 $blanco:       #ffffff;
 
 // === BACKGROUNDS ===
-$bg-base:      #0a0f1a;
-$bg-section:   #0d1422;
+$bg-base:      #000000;
+$bg-section:   #000000;
 $bg-card:      #111827;
 $bg-elevated:  #152035;
 $bg-footer:    #070c14;
@@ -46,7 +46,7 @@ $fs-xs:     0.75rem;
 $fs-micro:  0.68rem;
 
 // === SPACING ===
-$section-py:  clamp(5rem, 9vw, 8rem);
+$section-py:  clamp(3rem, 6vw, 5rem);
 $container:   1200px;
 
 // === MOTION ===
