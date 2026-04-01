@@ -6,7 +6,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  background: $bg-base;
+  background: #000000;
   color: $blanco;
   font-family: $font-body;
   font-size: $fs-body;
@@ -18,6 +18,12 @@ img { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 button { cursor: pointer; border: none; background: none; font: inherit; }
+
+// Ensure all active content sits above the Aurora fixed background (z-index: 0)
+nav, main, footer {
+  position: relative;
+  z-index: 1;
+}
 
 // === KEYFRAMES ===
 @keyframes fadeUp {

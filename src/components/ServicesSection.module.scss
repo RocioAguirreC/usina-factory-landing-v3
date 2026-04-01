@@ -3,7 +3,7 @@
 
 .section {
   @include section;
-  background: $bg-section;
+  background: transparent;
 }
 
 .inner { @include wrap; }

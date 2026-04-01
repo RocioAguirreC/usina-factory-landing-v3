@@ -1,13 +1,13 @@
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import s from './PortfolioSection.module.scss';
-import dicomImage from '../assets/dicom-viewer.jpg'; // O .png según la imagen adjunta
-import telemImage from '../assets/telemetria.jpg'; // O .png según la imagen adjunta
+import dicomImage from '../assets/dicom-viewer.png'; // O .png según la imagen adjunta
+import telemImage from '../assets/telemetria.png'; // O .png según la imagen adjunta
 
 // DICOM card - brain visualization
 function DicomVisual() {
   return (
     <div className={s.dicomVisual}>
-      <img src={dicomImage} alt="Visualizador DICOM" className={s.dicomSvg} style={{ borderRadius: '8px', objectFit: 'cover' }} />
+      <img src={dicomImage} alt="Visualizador DICOM" className={s.dicomSvg} />
     </div>
   );
 }
@@ -16,7 +16,7 @@ function DicomVisual() {
 function TelemetryVisual() {
   return (
     <div className={s.telemVisual}>
-      <img src={telemImage} alt="Dashboard de Telemetría" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      <img src={telemImage} alt="Dashboard de Telemetría" className={s.telemImg} />
     </div>
   );
 }

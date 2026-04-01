@@ -1,7 +1,7 @@
 @use '../styles/variables' as *;
 @use '../styles/mixins' as *;
 
-.section { @include section; background: $bg-base; }
+.section { @include section; background: transparent; }
 .inner   { @include wrap; }
 
 .header { margin-bottom: 3rem; }
