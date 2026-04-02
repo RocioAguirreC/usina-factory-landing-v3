@@ -1,4 +1,4 @@
-import { useScrollReveal } from '../hooks/useScrollReveal';
+import { motion } from 'framer-motion';
 import s from './ServicesSection.module.scss';
 
 const SERVICES = [
@@ -34,22 +34,48 @@ const BADGES = [
   'Garantizamos la calidad de nuestros entregables',
 ];
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.1 }
+  }
+};
+
+const itemUp = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 70, damping: 15 } }
+};
+
 export default function ServicesSection() {
-  const ref = useScrollReveal();
   return (
-    <section id="servicios" className={s.section} ref={ref}>
-      <div className={s.inner}>
+    <section id="servicios" className={s.section}>
+      <motion.div 
+        className={s.inner}
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-10%" }}
+      >
         <div className={s.header}>
+<<<<<<< HEAD
           <p className={`${s.label} reveal`}>LO QUE HACEMOS</p>
           <h2 className={`${s.h2} reveal rd1`}>Servicios</h2>
           <p className={`${s.subtitle} reveal rd2`}>
             Soluciones tecnológicas adaptadas al nivel de madurez y necesidades reales de cada negocio.
           </p>
+=======
+          <motion.p variants={itemUp} className={s.label}>LO QUE HACEMOS</motion.p>
+          <motion.h2 variants={itemUp} className={s.h2}>Servicios</motion.h2>
+          <motion.p variants={itemUp} className={s.subtitle}>
+            Soluciones tecnológicas adaptadas al nivel de madurez y<br />necesidades reales de cada negocio.
+          </motion.p>
+>>>>>>> 4d33a6a (Agregamos texturas y algunas interacciones)
         </div>
 
         <div className={s.grid}>
-          {SERVICES.map((sv, i) => (
-            <div key={sv.num} className={`${s.card} reveal rd${i + 1}`}>
+          {SERVICES.map((sv) => (
+            <motion.div variants={itemUp} key={sv.num} className={s.card}>
               <div className={s.cardTop}>
                 <div className={s.iconBox}>{sv.icon}</div>
                 <span className={s.num}>{sv.num}</span>
@@ -61,18 +87,18 @@ export default function ServicesSection() {
                   <li key={b}><span className={s.dot} />{b}</li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        <div className={`${s.badgeRow} reveal rd2`}>
+        <div className={s.badgeRow}>
           {BADGES.map(b => (
-            <div key={b} className={s.badgePill}>
+            <motion.div variants={itemUp} key={b} className={s.badgePill}>
               <span className={s.pillDot} />{b}
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

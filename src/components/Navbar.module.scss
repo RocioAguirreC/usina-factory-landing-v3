@@ -11,7 +11,9 @@
   animation: slideDown 0.5s $ease both;
 
   &.scrolled {
-    background: rgba(10,15,26,0.92);
+    background-color: rgba(10,15,26,0.92);
+    background-image: var(--noise-pattern);
+    background-blend-mode: overlay;
     backdrop-filter: blur(16px);
     border-bottom-color: $border-subtle;
     padding: 0.7rem 0;

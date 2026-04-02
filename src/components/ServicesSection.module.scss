@@ -6,11 +6,17 @@
   background: transparent;
 }
 
-.inner { @include wrap; }
+.inner {
+  @include wrap;
+}
 
-.header { margin-bottom: 3.5rem; }
+.header {
+  margin-bottom: 3.5rem;
+}
 
-.label { @include section-label; }
+.label {
+  @include section-label;
+}
 
 .h2 {
   font-family: $font-display;
@@ -33,7 +39,10 @@
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   margin-bottom: 1.25rem;
-  @include mobile { grid-template-columns: 1fr; }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
 }
 
 .card {
@@ -102,7 +111,10 @@
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
-  @include mobile { flex-direction: column; }
+
+  @include mobile {
+    flex-direction: column;
+  }
 }
 
 .badgePill {
@@ -112,13 +124,23 @@
   align-items: center;
   gap: 0.6rem;
   padding: 0.9rem 1.25rem;
-  background: $bg-card;
+  background-color: $bg-card;
+  background-image: var(--noise-pattern);
+  background-blend-mode: soft-light;
   border: 1px solid $border-card;
   border-radius: $r-lg;
   font-size: $fs-sm;
   color: $text-muted;
-  transition: border-color $t-fast;
-  &:hover { border-color: $border-turq; color: $blanco; }
+  transition: border-color $t-base $ease, box-shadow $t-base $ease,
+    transform $t-base $ease, background $t-base, color $t-base;
+
+  &:hover {
+    border-color: $border-turq;
+    color: $blanco;
+    box-shadow: 0 10px 40px rgba(0, 151, 178, 0.15), inset 0 0 0 1px rgba(0, 151, 178, 0.2);
+    transform: translateY(-4px) scale(1.01);
+    background: linear-gradient(145deg, $bg-elevated, $bg-card);
+  }
 }
 
 .pillDot {

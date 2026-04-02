@@ -7,7 +7,11 @@ import AboutSection from './components/AboutSection';
 import LocationSection from './components/LocationSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+<<<<<<< HEAD
 import AuroraBackground from './components/AuroraBackground';
+=======
+import FadeIn from './components/FadeIn';
+>>>>>>> 4d33a6a (Agregamos texturas y algunas interacciones)
 
 export default function App() {
   return (
@@ -17,10 +21,10 @@ export default function App() {
       <main>
         <HeroSection />
         <ServicesSection />
-        <PortfolioSection />
-        <AboutSection />
-        <LocationSection />
-        <ContactSection />
+        <FadeIn><PortfolioSection /></FadeIn>
+        <FadeIn><AboutSection /></FadeIn>
+        <FadeIn><LocationSection /></FadeIn>
+        <FadeIn><ContactSection /></FadeIn>
       </main>
       <Footer />
     </>
